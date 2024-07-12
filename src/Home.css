@@ -19,7 +19,7 @@
 .welcome-section {
 
   min-height: 100vh;
-  background: linear-gradient(rgba(8,0,58,0.7), rgba(8,0,58,0.7)), url('C:\Users\hp\Desktop\KaziKonnect\kazi_konnect\public\handyman4.jfif');
+  background: linear-gradient(rgba(8,0,58,0.7), rgba(8,0,58,0.7)), url('/public/bghero.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -28,6 +28,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .welcome-section h1{

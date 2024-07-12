@@ -1,0 +1,59 @@
+/* Home.css */
+
+.home-page {
+  
+
+
+}
+
+.home-content {
+
+  color: white; /* White text for better readability */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Distribute sections evenly */
+}
+
+
+.welcome-section {
+
+  min-height: 100vh;
+  background: linear-gradient(rgba(8,0,58,0.7), rgba(8,0,58,0.7)), url('C:\Users\hp\Desktop\KaziKonnect\kazi_konnect\public\handyman4.jfif');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-section h1{
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.welcome-section p{
+  max-width: 700px;
+  margin: 10px auto 20px;
+  line-height: 1.4;
+  font-size: 20px;
+}
+
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+
+  
+}

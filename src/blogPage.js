@@ -5,6 +5,7 @@ import { BaseUrl } from './config';
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
+  console.log("posts", posts)
 
   useEffect(() => {
     const fetchPosts = async () => {

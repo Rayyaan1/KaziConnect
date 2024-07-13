@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from './post';
+import { BaseUrl } from './config';
 
 const PostPage = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const PostPage = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:5500/posts/${id}`);
+        const response = await fetch(`${BaseUrl}/posts/${id}`);
         const data = await response.json();
         setPost(data);
       } catch (error) {

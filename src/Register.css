@@ -44,4 +44,9 @@
   .register-form button:hover {
     background-color: #0056b3;
   }
-  
+
+  @media (max-width: 768px) {
+    .register-content {
+      padding: 1rem;
+    }
+  }

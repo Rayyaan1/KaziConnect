@@ -42,3 +42,11 @@ a{
   margin-left: 8px; 
   vertical-align: middle; 
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

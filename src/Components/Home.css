@@ -1,10 +1,6 @@
 /* Home.css */
 
-.home-page {
-  
 
-
-}
 
 .home-content {
 
@@ -49,12 +45,21 @@
 
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .welcome-section {
-      flex-direction: column;
-      text-align: center;
+@media (max-width: 850px) {
+  .welcome-section h1{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .welcome-section h1{
+    font-size: 30px;
+    max-width: 400px;
+    margin: auto;
   }
 
-
-  
+  .welcome-section{
+    font-size: 14px;
+    margin: 15px auto 30px;
+  }
 }

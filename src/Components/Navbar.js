@@ -12,13 +12,18 @@ const Navbar = () => {
       window.scrollY > 40 ? setSticky(true) : setSticky(false);
     });
   }, []);
+  const [mobileMenu, setMobileMenu] = useState(false)
+  const toggleMenu =() =>{
+    mobileMenu ? setMobileMenu(false) : setMobileMenu(true)
+
+  }
 
   return (
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
-      <div className="logo">
-        <ScrollLink to="home" smooth={true} offset={0} duration={500}>KaziKonnect</ScrollLink>
-      </div>
-      <ul className="nav-links">
+      <ScrollLink to="home">
+        <img className='logo' src="/KKLogo.png" />
+      </ScrollLink>
+      <ul className={mobileMenu?'':'hide-mobile-menu'}>
         <li>
           <ScrollLink to="home" smooth={true} offset={0} duration={500}>Home</ScrollLink>
         </li>
@@ -35,7 +40,7 @@ const Navbar = () => {
           <ScrollLink to="contact" smooth={true} offset={-250} duration={500}>Contact</ScrollLink>
         </li>
         <li>
-          <ScrollLink to="blogPage" smooth={true} offset={0} duration={500}>Blog</ScrollLink>
+          <RouterLink to="/blogPage">Blog</RouterLink> {/* Use RouterLink for Blog */}
         </li>
         <li className="dropdown">
           <button className="dropbtn">Sign Up</button>
@@ -44,8 +49,9 @@ const Navbar = () => {
             <RouterLink to="/register/service-provider">Service Provider</RouterLink>
           </div>
         </li>
-        <button className="dropbtn">Log In</button>
+        <button className="dropbtn dropdown">Log In</button>
       </ul>
+      <img src="/menu-icon.png" className='menu-icon' onClick={toggleMenu} />
     </nav>
   );
 };

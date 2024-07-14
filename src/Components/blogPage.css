@@ -1,0 +1,13 @@
+.blogCSS {
+    background-image: url('C:\Users\hp\Desktop\KaziKonnect\kazi_konnect\public\BlogBg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './Register.css'; 
+import { Link } from 'react-router-dom';
 const ServiceProviderRegister = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +31,8 @@ const ServiceProviderRegister = () => {
           <label>Confirm Password:</label>
           <input type="password" name="confirm-password" required />
           <button type="submit">Register</button>
+          <p>Already have an Acoount</p>
+          <Link to="/login">Login</Link>
         </form>
       </main>
       <Footer />

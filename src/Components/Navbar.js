@@ -25,12 +25,13 @@ const Navbar = () => {
         <li><Link to='contact' smooth={true} offset={0} duration={500}>Contact</Link></li>
         <li><Link to="/blogPage">Blog</Link></li>
         <li className="dropdown">
-          <button className="dropbtn">Register</button>
+          <button className="dropbtn">Sign Up</button>
           <div className="dropdown-content">
             <Link to="/register/customer">Customer</Link>
             <Link to="/register/service-provider">Service Provider</Link>
           </div>
         </li>
+        <button className="dropbtn">Log In</button>
       </ul>
     </nav>
   );

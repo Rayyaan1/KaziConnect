@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 import { BaseUrl } from './config';
+import './blogPage.css';
 
 
 const BlogPage = () => {
@@ -22,7 +23,7 @@ const BlogPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className='blogCSS'>
       <h1>Blog Posts</h1>
       <BlogList posts={posts} />
     </div>

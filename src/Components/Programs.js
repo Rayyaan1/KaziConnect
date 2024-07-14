@@ -11,16 +11,13 @@ const Programs = () => {
         </p>
       <div className='program-images'>
         <div className='program'>
-          <img src="/about-image5.jfif" alt="" />
+          <img src="/about1.jpg" alt="" />
         </div>
         <div className='program'>
-          <img src="/about-image2.jfif" alt="" />
+          <img src="/about2.jpg" alt="" />
         </div>
         <div className='program'>
-          <img src="/about-image.jfif" alt="" />
-        </div>
-        <div className='program'>
-          <img src="/about-image6.jfif" alt="" />
+          <img src="/about4.jpg" alt="" />
         </div>
       </div>
       <button className='btn'>See more Here <img src="/white-arrow.png" alt="Arrow Icon" /></button>

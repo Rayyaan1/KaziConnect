@@ -1,49 +1,58 @@
 .programs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
 
-  .paragraph { 
-    max-width: 700px;
-    margin: 10px auto 20px;
-    line-height: 1.4;
-    font-size: 20px;
-    max-width: 800px;
-      
-  }
-  .program-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-  
+.paragraph {
+  max-width: 700px;
+  margin: 10px auto 20px;
+  line-height: 1.4;
+  font-size: 20px;
+}
+
+.program-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.program {
+  flex: 1 0 auto;
+  max-width: calc(33.33% - 30px); /* Three images per row by default */
+  height: 300px; /* Adjusted height for slightly bigger images */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.program img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.programs .btn {
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
   .program {
-    flex: 1;
-    max-width: 250px;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+    max-width: calc(50% - 30px); /* Two images per row on medium screens */
+    height: 250px; /* Reduce height for smaller screens */
   }
-  
-  .program img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    
+}
+
+@media (max-width: 768px) {
+  .program {
+    max-width: calc(100% - 30px); /* One image per row on smaller screens */
+    height: 200px; /* Further reduce height for smaller screens */
   }
-  
-  .programs .btn {
-    margin-top: 20px;
-  }
-  
-  
+}

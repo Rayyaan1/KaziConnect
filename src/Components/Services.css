@@ -1,74 +1,94 @@
 .services-page {
- /* Background color for the entire services page */
-    min-height: 100vh; /* Ensure the page covers the viewport height */
-    padding: 20px;
-  }
-  
-  .services {
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    margin: 0 auto; /* Center align the content */
-  }
-  
-  .services h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three items per row */
-    gap: 20px; /* Gap between grid items */
-  }
-  
-  .service-item {
-    background-color: #fff; /* White background for each service item */
-    border-radius: 8px;
-    overflow: hidden; /* Ensure images don't overflow */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for each item */
-    transition: transform 0.3s ease; /* Smooth transform on hover */
-  }
-  
-  .service-item:hover {
-    transform: translateY(-5px); /* Lift the item on hover */
-  }
-  
-  .service-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%; /* Ensure cards expand to full height */
-  }
-  
-  .service-card img {
-    width: 100%; /* Ensure images fill their container */
-    height: 200px; /* Set a fixed height for uniformity */
-    object-fit: cover; /* Maintain aspect ratio and cover container */
-    display: block; /* Remove extra space below images */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
-  .service-info {
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .service-info p {
-    margin: 0;
-  }
-  
-  .title{
-    text-align: center;
-    color: #212EA0;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 70px 0 30px; 
+  min-height: 100vh; /* Ensure the page covers the viewport height */
+  padding: 20px;
+  text-align: center; /* Center align text */
 }
-.title h2{
-    font-size: 32px;
-    color:#000F38 ;
-    margin-top: 5px;
-    text-transform: none ;
+
+.services {
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto; /* Center align the content */
+}
+
+.services h2 {
+  margin-bottom: 30px;
+  font-size: 28px; /* Adjust font size */
+  color: #000F38;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three items per row on larger screens */
+  gap: 20px; /* Gap between grid items */
+}
+
+.service-item {
+  background-color: #fff; /* White background for each service item */
+  border-radius: 8px;
+  overflow: hidden; /* Ensure images don't overflow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for each item */
+  transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+.service-item:hover {
+  transform: translateY(-5px); /* Lift the item on hover */
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure cards expand to full height */
+}
+
+.service-card img {
+  width: 100%; /* Ensure images fill their container */
+  height: 200px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  display: block; /* Remove extra space below images */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.service-info {
+  padding: 10px;
+}
+
+.service-info p {
+  margin: 0;
+}
+
+.title {
+  color: #212EA0;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 70px 0 30px;
+}
+
+.title h2 {
+  font-size: 32px;
+  color: #000F38;
+  margin-top: 5px;
+  text-transform: none;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two items per row on medium screens */
+    gap: 15px; /* Reduce gap for smaller screens */
+  }
+
+  .service-card img {
+    height: 180px; /* Adjust image height for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: repeat(1, 1fr); /* One item per row on smaller screens */
+  }
+
+  .service-card img {
+    height: 160px; /* Further adjust image height for smaller screens */
+  }
 }

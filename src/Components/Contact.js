@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <div className='contact'>
       <div className='contact_col'>
-        <h3>Send us a Message <img src="/message-icon.png" alt="Msg" /></h3> <br/>
+        <h3><b>Send us a Message</b> <img src="/message-icon.png" alt="Msg" /></h3> <br/>
 
         <p>
             KaziKonnect is dedicated to connecting clients with skilled service providers, offering a seamless platform 
@@ -47,11 +47,11 @@ const Contact = () => {
       </div>
       <div className='contact_col'>
         <form onSubmit={onSubmit}> 
-          <label>Your Name</label>
+          <label><b>Your Name</b></label>
           <input type='text' name='name' placeholder='Enter your Name' required />
-          <label>Phone Number</label>
+          <label><b>Phone Number</b></label>
           <input type='tel' name='phone' placeholder='Enter Your Mobile Number' required />
-          <label>Enter Your Message</label>
+          <label><b>Enter Your Message</b></label>
           <textarea name='message' rows='6' placeholder='Enter Your Message' required></textarea>
           <button type='submit' className='btn'>Submit Now</button>
         </form>

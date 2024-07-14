@@ -9,6 +9,7 @@ import ServiceProviderRegister from './ServiceProviderRegister';
 import Services from './Services';
 import BlogPage from './blogPage';
 import PostPage from './Postpage';
+import Testimonials from './Testimonials';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="#services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path='/testimonials' element={<Testimonials/>}/>
         <Route path="/blogPage" element={<BlogPage />} />
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/register/customer" element={<CustomerRegister />} />

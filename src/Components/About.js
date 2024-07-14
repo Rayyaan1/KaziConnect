@@ -2,7 +2,7 @@ import React from 'react'
 import './About.css'
 const About = ({subTitle, title}) => {
   return (
-    <div className='about title'>
+    <div id='abouts' className='about title'>
       <p>{subTitle}</p>
       <h2>{title}</h2>
       <div className='about-left'>

@@ -4,7 +4,7 @@ import './index.css';
 
 const Programs = () => {
   return (
-    <div className='programs'>
+    <div id='about' className='programs'>
         <p className='paragraph'>
             Whether you need home maintenance, renovations, or specialized professional services, KaziKonnect connects you with trusted experts who are committed to excellence. 
             Join us in transforming the way services are accessed and delivered.

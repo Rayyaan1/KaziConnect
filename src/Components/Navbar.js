@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import './index.css';
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const location = useLocation();
+  const notHome = location.pathname !== '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+    <nav className={`container ${sticky || notHome ? 'dark-nav' : ''}`}>
       <RouterLink to="/">
         <img className='logo' src="/KKLogo.png" alt='KaziKonnect Logo' />
       </RouterLink>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
 import './Register.css';
 import supabase from '../Config/SupabaseClient';
 
@@ -43,24 +42,32 @@ const CustomerRegister = () => {
     <div>
       <Navbar />
       <main className="register-content">
-        <h2>Service Provider Registration</h2>
+        <h2>Customer Registration</h2>
         <form className="register-form" onSubmit={handleSubmit}>
-          <label>First Name:</label>
-          <input
-            type="text"
-            name="first-name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-          <label>Last Name:</label>
-          <input
-            type="text"
-            name="last-name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
+          <div className='combinedInputs'>
+            <div className='labelAndInput'>
+              <label>First Name:</label>
+              <input
+                type="text"
+                name="first-name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </div>
+            <div className='labelAndInput'>
+              <label>Last Name:</label>
+              <input
+                type="text"
+                name="last-name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </div>
+
+          </div>
+
           <label>Email:</label>
           <input
             type="email"
@@ -77,29 +84,38 @@ const CustomerRegister = () => {
             onChange={(e) => setPhone(e.target.value)}
             required
           />
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <label>Confirm Password:</label>
-          <input
-            type="password"
-            name="confirm-password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
+          <div className='combinedInputs'>
+            <div className='labelAndInput'>
+              <label>Password:</label>
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+
+            </div>
+            <div className='labelAndInput'>
+              <label>Confirm Password:</label>
+              <input
+                type="password"
+                name="confirm-password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+
+
           <button type="submit">Register</button>
           <p>Already have an account?</p>
           <Link to="/login">Login</Link>
-        </form>
-      </main>
-      <Footer />
-    </div>
+        
+      </form>
+    </main>
+    </div >
   );
 };
 

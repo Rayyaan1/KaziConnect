@@ -23,12 +23,12 @@ const Navbar = () => {
 
   return (
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
-      <ScrollLink to="home">
+      <RouterLink to="/">
         <img className='logo' src="/KKLogo.png" alt='KaziKonnect Logo' />
-      </ScrollLink>
+      </RouterLink>
       <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
         <li>
-          <ScrollLink to="home" smooth={true} offset={0} duration={500}>Home</ScrollLink>
+          <ScrollLink to="/home" smooth={true} offset={0} duration={500}>Home</ScrollLink>
         </li>
         <li>
           <ScrollLink to="services" smooth={true} offset={-260} duration={500}>Services</ScrollLink>
@@ -52,6 +52,14 @@ const Navbar = () => {
             <RouterLink to="/register/service-provider">Service Provider</RouterLink>
           </div>
         </li>
+        <li className="dropdown">
+          <button className="dropbtn">Login</button>
+          <div className="dropdown-content">
+            <RouterLink to="/login/customer">Customer</RouterLink>
+            <RouterLink to="/login/service-provider">Service Provider</RouterLink>
+          </div>
+        </li>
+
       </ul>
       <img src="/menu-icon.png" className='menu-icon' onClick={toggleMenu} alt='Menu Icon' />
     </nav>

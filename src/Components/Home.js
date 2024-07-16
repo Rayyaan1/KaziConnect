@@ -9,8 +9,11 @@ import Programs from './Programs';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
 import Footer from './Footer';
+import supabase from '../Config/SupabaseClient';
 
 const Home = () => {
+
+  console.log(supabase)
   return (
     <div className="home-page">
       <Navbar />

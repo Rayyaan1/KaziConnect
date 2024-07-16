@@ -1,33 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import './Register.css'; 
+import './Register.css';
+import supabase from '../Config/SupabaseClient';
+
 const CustomerRegister = () => {
-  const handleSubmit = (e) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Customer registration submitted!');
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    const { user, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          first_name: firstName,
+          last_name: lastName,
+          phone
+        }
+      }
+    });
+    if (error) {
+      console.error('Error signing up:', error);
+    } else {
+      console.log('User signed up:', user);
+      navigate('/login/customer');
+    }
   };
 
   return (
     <div>
       <Navbar />
       <main className="register-content">
-        <h2>Customer Registration</h2>
+        <h2>Service Provider Registration</h2>
         <form className="register-form" onSubmit={handleSubmit}>
           <label>First Name:</label>
-          <input type="text" name="first-name" required />
+          <input
+            type="text"
+            name="first-name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
           <label>Last Name:</label>
-          <input type="text" name="last-name" required />
+          <input
+            type="text"
+            name="last-name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
           <label>Email:</label>
-          <input type="email" name="email" required />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
           <label>Phone:</label>
-          <input type="tel" name="phone" required />
+          <input
+            type="tel"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
           <label>Password:</label>
-          <input type="password" name="password" required />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
           <label>Confirm Password:</label>
-          <input type="password" name="confirm-password" required />
+          <input
+            type="password"
+            name="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
           <button type="submit">Register</button>
+          <p>Already have an account?</p>
+          <Link to="/login">Login</Link>
         </form>
       </main>
       <Footer />

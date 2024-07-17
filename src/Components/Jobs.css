@@ -1,0 +1,50 @@
+.jobs-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .job-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+  
+  .job-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .job-description {
+    flex: 1;
+  }
+  
+  .job-description h2 {
+    margin-top: 0;
+  }
+  
+  .job-location,
+  .job-status {
+    margin-top: 10px;
+  }
+  
+  .job-status {
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  .job-status.closed {
+    color: #F44336;
+  }
+  

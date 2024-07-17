@@ -1,30 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import Post from './post';
-import { BaseUrl } from './config';
+import './PostPage.css';
 
-const PostPage = () => {
+const PostPage = ({ posts }) => {
   const { id } = useParams();
-  const [post, setPost] = useState(null);
 
+  // Check if posts array exists and has items
+  if (!posts || posts.length === 0) {
+    return <div>Loading...</div>; // Handle loading state if posts are being fetched asynchronously
+  }
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await fetch(`${BaseUrl}/posts/${id}`);
-        const data = await response.json();
-        setPost(data);
-      } catch (error) {
-        console.error('Error fetching post:', error);
-      }
-    };
+  // Find the post with the matching id
+  const post = posts.find(p => p._id === id);
 
-    fetchPost();
-  }, [id]);
+  if (!post) {
+    return <div>Post not found</div>; // Handle case where post with id is not found
+  }
 
   return (
-    <div>
-      {post ? <Post post={post} /> : <p>Loading...</p>}
+    <div className="post-page">
+      <img src={post.image} alt={post.title} className="post-image" />
+      <h1>{post.title}</h1>
+      <p>{post.fullContent}</p>
     </div>
   );
 };

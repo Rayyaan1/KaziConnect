@@ -8,7 +8,7 @@ const BlogList = ({ posts }) => {
       {posts.map((post) => (
         <div key={post._id} className="blog-post">
           <h2>{post.title}</h2>
-          <p>{post.content.substring(0, 100)}...</p>
+          <p>{post.content}</p>
           <Link to={`/post/${post._id}`}>Read more</Link>
         </div>
       ))}

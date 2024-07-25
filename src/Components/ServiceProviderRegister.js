@@ -17,6 +17,17 @@ const ServiceProviderRegister = () => {
   });
   const navigate = useNavigate();
 
+  const serviceTypes = [
+    'Carpentry',
+    'Cleaning',
+    'Fixing',
+    'Electrical',
+    'Gardening',
+    'Painting',
+    'Plumbing',
+    'Other',
+  ];
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -38,7 +49,6 @@ const ServiceProviderRegister = () => {
     } else {
       console.log('Service provider registration submitted!');
       navigate('/login/service-provider');
-      
     }
   };
 
@@ -63,7 +73,20 @@ const ServiceProviderRegister = () => {
           <label>Phone:</label>
           <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
           <label>Service Type:</label>
-          <input type="text" name="serviceType" value={formData.serviceType} onChange={handleChange} required />
+          <div className="service-dropdown-container">
+            <select 
+              name="serviceType" 
+              value={formData.serviceType} 
+              onChange={handleChange} 
+              className="service-dropdown" 
+              required
+            >
+              <option value="">Select a service type</option>
+              {serviceTypes.map((type) => (
+                <option key={type} value={type}>{type}</option>
+              ))}
+            </select>
+          </div>
           <div className='combinedInputs'>
             <div className='labelAndInput'>
               <label>Password:</label>

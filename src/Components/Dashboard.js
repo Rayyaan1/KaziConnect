@@ -15,7 +15,7 @@ const Dashboard = () => {
       const { data: { user }, error } = await supabase.auth.getUser();
       if (error) {
         console.error('Error getting user:', error);
-        navigate('/login/customer');
+        navigate('/login/consumer');
         return;
       }
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
         setUser(user);
         fetchProfile(user.id);
       } else {
-        navigate('/login/customer');
+        navigate('/login/consumer');
       }
     };
 
@@ -51,7 +51,7 @@ const Dashboard = () => {
     } else {
       console.log('Logout successful');
       alert('Logout successful');
-      navigate('/login/customer');
+      navigate('/login/consumer');
     }
   };
 
@@ -78,3 +78,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

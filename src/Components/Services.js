@@ -28,7 +28,7 @@ const Services = ({subTitle, title}) => {
             <div className="service-card">
               <img src="/mowing.avif" alt="Lawn Mowing Service" />
               <div className="service-info">
-                <p>Lawn Mowing Services</p>
+                <p>Gardening Services</p>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ const Services = ({subTitle, title}) => {
             <div className="service-card">
               <img src="/electrician.avif" alt="Electrician Service" />
               <div className="service-info">
-                <p>Electrician Services</p>
+                <p>Electrical Services</p>
               </div>
             </div>
           </div>

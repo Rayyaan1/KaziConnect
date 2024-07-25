@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import './Register.css';
 import supabase from '../Config/SupabaseClient';
 
-const CustomerRegister = () => {
+const ConsumerRegister = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -42,7 +42,7 @@ const CustomerRegister = () => {
     <div>
       <Navbar />
       <main className="register-content">
-        <h2>Customer Registration</h2>
+        <h2>Consumer Registration</h2>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className='combinedInputs'>
             <div className='labelAndInput'>
@@ -119,4 +119,4 @@ const CustomerRegister = () => {
   );
 };
 
-export default CustomerRegister;
+export default ConsumerRegister;

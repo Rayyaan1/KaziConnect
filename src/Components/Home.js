@@ -25,7 +25,7 @@ const Home = () => {
       <Navbar />
       <div className='home-content' id="home">
         <div className='welcome-section'>
-          <h1>KaziKonnect, Connect with skilled local handymen</h1>
+          <h1>KaziKonnect</h1>
           <p>KaziKonnect offers a centralized platform that efficiently connects clients with skilled workers, facilitating quicker, more reliable, and secure engagements. By providing a web-based solution, we offer a wide audience, offering easy access to services for clients and ample job opportunities for workers.</p>
           <button className='btn' onClick={handleExploreMore}>Explore More <img src="/white-arrow.png" alt="" /></button>
         </div>
@@ -33,7 +33,7 @@ const Home = () => {
       <div className='container'>
         <Title subTitle='Our Services' title='What we Offer' />
         <Services id="services" />
-        <Title subTitle='About Kazi Konnect' title='Offering you quality services in your home' />
+        <Title subTitle='About Kazi Konnect' title='Offering you quality services to your home' />
         <br />
         <br />
         <Programs />
